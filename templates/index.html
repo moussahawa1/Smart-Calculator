@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Smart Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="calculator">
+        <div class="title">My Smart Calculator</div>
+        <input type="text" class="calculator-screen" id="screen" readonly>
+        <div class="buttons">
+            <button class="btn" onclick="clearScreen()">AC</button>
+            <button class="btn" onclick="deleteLast()">←</button>
+            <button class="btn" onclick="appendToScreen('(')">(</button>
+            <button class="btn" onclick="appendToScreen(')')">)</button>
+
+            <button class="btn" onclick="appendToScreen('7')">7</button>
+            <button class="btn" onclick="appendToScreen('8')">8</button>
+            <button class="btn" onclick="appendToScreen('9')">9</button>
+            <button class="btn" onclick="appendToScreen('/')">÷</button>
+
+            <button class="btn" onclick="appendToScreen('4')">4</button>
+            <button class="btn" onclick="appendToScreen('5')">5</button>
+            <button class="btn" onclick="appendToScreen('6')">6</button>
+            <button class="btn" onclick="appendToScreen('*')">×</button>
+
+            <button class="btn" onclick="appendToScreen('1')">1</button>
+            <button class="btn" onclick="appendToScreen('2')">2</button>
+            <button class="btn" onclick="appendToScreen('3')">3</button>
+            <button class="btn" onclick="appendToScreen('-')">−</button>
+
+            <button class="btn" onclick="appendToScreen('0')">0</button>
+            <button class="btn" onclick="appendToScreen('.')">.</button>
+            <button class="btn" onclick="appendToScreen('%')">%</button>
+            <button class="btn" onclick="appendToScreen('+')">+</button>
+
+            <button class="btn" onclick="appendToScreen('π')">π</button>
+            <button class="btn" onclick="appendToScreen('log10(')">log10</button>
+            <button class="btn" onclick="appendToScreen('ln(')">ln</button>
+            <button class="btn" onclick="appendToScreen('e')">e</button>
+            <button class="btn" onclick="appendToScreen('^')">^</button>
+            <button class="btn" onclick="appendToScreen('1/')">1/x</button>
+            <button class="btn" onclick="appendToScreen('sqrt(')">√</button>
+            <button class="btn" onclick="appendToScreen('cbrt(')">∛</button>
+            <button class="btn" onclick="appendToScreen('sin(')">sin</button>
+            <button class="btn" onclick="appendToScreen('cos(')">cos</button>
+            <button class="btn" onclick="appendToScreen('tan(')">tan</button>
+            <button class="btn" onclick="appendToScreen('sinh(')">sinh</button>
+            <button class="btn" onclick="appendToScreen('cosh(')">cosh</button>
+            <button class="btn" onclick="appendToScreen('tanh(')">tanh</button>
+            <button class="btn" onclick="calculateResult()">=</button>
+        </div>
+        <canvas id="drawingPad" width="200" height="100" style="border: 1px solid black;"></canvas>
+        <button id="recognizeButton" onclick="recognizeNumber()">Recognize</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
